@@ -35,7 +35,7 @@ public class OSCReciever : UniOSCEventTarget
                 Scene3.Instance.OSCSquaresData(newPatternID, brightness);
                 break;
             case PATTERN.LINE:
-                Scene_Cocoon.Instance.OSCLinesData(newPatternID, brightness);
+                // Scene_Cocoon.Instance.OSCLinesData(newPatternID, brightness);
                 break;
         }
     }
@@ -169,7 +169,7 @@ public class OSCReciever : UniOSCEventTarget
                 Handle_SOUND_LaserMessage(args);
                 break;
             case "/laser_randomize_lines":
-                Scene_Cocoon.Instance.RandomizeLines();
+                // Scene_Cocoon.Instance.RandomizeLines();
                 break;
             
             case "/laser_SetRGB":

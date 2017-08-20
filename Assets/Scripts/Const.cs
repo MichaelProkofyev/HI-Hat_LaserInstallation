@@ -28,7 +28,7 @@ public static class CONST {
 
     //LED
     public static string LED_SERIAL_PORT = "/dev/tty.usbmodem1421";
-    public static int LED_COUNT = 10;
+    public static int LED_COUNT = 14;
     public static float LED_MIN_UPDATE_TIME = 0.017f;
 
     //LASER

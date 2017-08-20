@@ -335,10 +335,10 @@ public class Laser : SingletonComponent<Laser> {
             cut_x = (ushort)Random.Range(-30000, 30000);
             cut_y = (ushort)Random.Range(-30000, 30000);
         } else if (Input.GetKey(KeyCode.L)) {
-            Scene_Cocoon.Instance.RandomizeLines();
+            // Scene_Cocoon.Instance.RandomizeLines();
         } else if (Input.GetKeyDown(KeyCode.K))
         {
-            Scene_Cocoon.Instance.ResetLines();
+            // Scene_Cocoon.Instance.ResetLines();
         }
         else
         {

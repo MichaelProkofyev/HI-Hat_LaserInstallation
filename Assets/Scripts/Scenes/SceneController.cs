@@ -12,7 +12,7 @@ public class SceneController : SingletonComponent<SceneController> {
 
         Scene1.Instance.InitScene(Scene1.SUBSCENE.NONE_0);
         Scene3.Instance.DisableScene();
-        Scene_Cocoon.Instance.DisableScene();
+        // Scene_Cocoon.Instance.DisableScene();
         KinectController.Instance.DisableScene();
 
         if (newScene != currentScene) {
@@ -27,7 +27,7 @@ public class SceneController : SingletonComponent<SceneController> {
                     Scene3.Instance.InitScene();
                     break;
                 case SCENE.COCOON_5:
-                    Scene_Cocoon.Instance.InitScene();
+                    // Scene_Cocoon.Instance.InitScene();
                     break;
                 case SCENE.KINECT:
                     KinectController.Instance.InitScene();

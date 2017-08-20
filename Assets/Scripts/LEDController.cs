@@ -20,19 +20,31 @@ public class LEDController : SingletonComponent<LEDController> {
     void Start () {
         serialOpen(CONST.LED_SERIAL_PORT, baudRate);
         updateOutput = true;
+        for (int i = 0; i < ledValues.Length; i++){
+            ledValues[i] = 255;
+        }
+       // StartCoroutine(SwitchLight());
     }
 
     IEnumerator SwitchLight(){ 
         while(true) {
             yield return new WaitForSeconds(CONST.LED_MIN_UPDATE_TIME);
-            for (int i = 0; i < ledValues.Length; i++) {
+            //for (int i = 0; i < ledValues.Length; i++) {
                     // controls[i] = isZero ? 0 : 255;
                     //controls[i] = (int)(oscReciever.ledValues[i] * 255);
-            }
+            //}
+            ledValues[8] = (byte)(LightController.Instance.lights[0].intensity * 255);
+            ledValues[7] = (byte)(LightController.Instance.lights[1].intensity * 255);
+            ledValues[9] = (byte)(LightController.Instance.lights[2].intensity * 255);
+            ledValues[10] = (byte)(LightController.Instance.lights[3].intensity * 255);
         }
     }
 
     void Update () {
+        if(Input.GetKeyDown(KeyCode.Space)){
+            StartCoroutine(SwitchLight());
+        }
+
         if (serialOpened) {
             for (int i = 0; i < CONST.LED_COUNT; i++) {
                 if (oldControls[i] != ledValues[i] && !updateOutput) {
@@ -48,7 +60,6 @@ public class LEDController : SingletonComponent<LEDController> {
         }
 
     }
-
 
     void OnApplicationQuit()
     {
